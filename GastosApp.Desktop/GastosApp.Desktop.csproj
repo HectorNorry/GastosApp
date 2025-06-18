@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GastosApp.Core\GastosApp.Core.csproj" />
+    <ProjectReference Include="..\GastosApp.Infrastructure\GastosApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

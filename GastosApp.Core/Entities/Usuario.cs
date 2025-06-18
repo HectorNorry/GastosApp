@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace GastosApp.Core.Entities
 {
-    internal class Usuario
+    public class Usuario
     {
+        public int Id { get; set; }
+
+        public string Nombre { get; set; } = null!;
+        public string Apellido { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Contraseña { get; set; } = null!;
+
+        public ICollection<Gasto> Gastos { get; set; } = new List<Gasto>();
     }
 }
