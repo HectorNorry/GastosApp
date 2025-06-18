@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace GastosApp.Desktop.Models
 {
-    internal class Gasto
+    public class Gasto
     {
+        public int Id { get; set; }
+        public string Descripcion { get; set; } = null!;
+        public decimal Monto { get; set; }
+        public DateTime Fecha { get; set; }
+        public int UsuarioId { get; set; }
     }
 }

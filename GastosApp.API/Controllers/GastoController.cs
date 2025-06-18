@@ -17,12 +17,6 @@ namespace GastosApp.API.Controllers
             _gastoRepo = gastoRepo;
         }
 
-        [HttpGet("{usuarioId}")]
-        public async Task<IActionResult> GetPorUsuario(int usuarioId)
-        {
-            var lista = await _gastoRepo.GetByUsuarioAsync(usuarioId);
-            return Ok(lista);
-        }
 
         [HttpPost]
         public async Task<IActionResult> Crear(Gasto gasto)
@@ -34,8 +28,12 @@ namespace GastosApp.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Eliminar(int id)
         {
-            await _gastoRepo.DeleteAsync(id);
-            return Ok(new { mensaje = "Gasto eliminado" });
+            var gasto = await _gastoRepo.ObtenerPorIdAsync(id);
+            if (gasto == null)
+                return NotFound($"No se encontró el gasto con ID {id}");
+
+            await _gastoRepo.EliminarAsync(gasto);
+            return NoContent();
         }
 
         [HttpGet("usuario/{usuarioId}")]

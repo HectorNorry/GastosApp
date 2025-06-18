@@ -32,7 +32,7 @@ namespace GastosApp.Desktop.Forms
             {
                 MessageBox.Show("Inicio de sesión exitoso");
                 // Abrir el formulario de gastos pasando el usuario logueado
-                var formGastos = new FormGastos(usuario); // lo hacemos luego
+                var formGastos = new FormGastos(usuario); 
                 formGastos.Show();
                 this.Hide();
             }
@@ -44,7 +44,7 @@ namespace GastosApp.Desktop.Forms
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            var formRegistro = new FormRegistro();
+            var formRegistro = new formRegistro();
             formRegistro.ShowDialog();
         }
     }

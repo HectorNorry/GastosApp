@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtEmail = new TextBox();
+            txtContraseña = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            btnRegistrarse = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // txtEmail
             // 
-            textBox1.Location = new Point(292, 158);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(173, 23);
-            textBox1.TabIndex = 0;
+            txtEmail.Location = new Point(292, 158);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(173, 23);
+            txtEmail.TabIndex = 0;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            textBox2.Location = new Point(292, 226);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(173, 23);
-            textBox2.TabIndex = 1;
+            txtContraseña.Location = new Point(292, 226);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(173, 23);
+            txtContraseña.TabIndex = 1;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -83,21 +85,33 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(292, 286);
             button1.Name = "button1";
-            button1.Size = new Size(173, 23);
+            button1.Size = new Size(173, 35);
             button1.TabIndex = 5;
             button1.Text = "Iniciar Sesión";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegistrarse
             // 
-            button2.Location = new Point(698, 415);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnRegistrarse.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnRegistrarse.Location = new Point(664, 396);
+            btnRegistrarse.Name = "btnRegistrarse";
+            btnRegistrarse.Size = new Size(102, 30);
+            btnRegistrarse.TabIndex = 6;
+            btnRegistrarse.Text = "Registrarse";
+            btnRegistrarse.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(649, 363);
+            label4.Name = "label4";
+            label4.Size = new Size(139, 20);
+            label4.TabIndex = 7;
+            label4.Text = "No está registrado?";
             // 
             // FormLogin
             // 
@@ -105,27 +119,29 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(label4);
+            Controls.Add(btnRegistrarse);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtContraseña);
+            Controls.Add(txtEmail);
             Name = "FormLogin";
-            Text = "FormLogin";
+            Text = "Inicio de Sesión";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtEmail;
+        private TextBox txtContraseña;
         private Label label1;
         private Label label2;
         private Label label3;
         private Button button1;
-        private Button button2;
+        private Button btnRegistrarse;
+        private Label label4;
     }
 }
