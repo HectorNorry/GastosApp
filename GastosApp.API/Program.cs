@@ -1,5 +1,8 @@
 using GastosApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using GastosApp.Infrastructure.Interfaces;
+using GastosApp.Infrastructure.Repositories;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +18,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IGastoRepository, GastoRepository>();
 
 var app = builder.Build();
 

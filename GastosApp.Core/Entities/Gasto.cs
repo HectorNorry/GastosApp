@@ -16,6 +16,6 @@ namespace GastosApp.Core.Entities
         public DateTime Fecha { get; set; } = DateTime.Now;
 
         public int UsuarioId { get; set; }
-        public Usuario Usuario { get; set; } = null!;
+        public Usuario? Usuario { get; set; } = null!;
     }
 }
