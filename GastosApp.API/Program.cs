@@ -2,6 +2,8 @@ using GastosApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using GastosApp.Infrastructure.Interfaces;
 using GastosApp.Infrastructure.Repositories;
+using System.Text.Json.Serialization;
+using System.Text.Json; 
 
 
 
@@ -13,7 +15,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+ .AddJsonOptions(options =>
+ {
+     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+ });
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

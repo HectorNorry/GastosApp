@@ -13,9 +13,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.6" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.6" />
     <PackageReference Include="System.Text.Json" Version="9.0.6" />
+    <PackageReference Include="Uno.UI" Version="5.6.99" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GastosApp.API\GastosApp.API.csproj" />
     <ProjectReference Include="..\GastosApp.Core\GastosApp.Core.csproj" />
     <ProjectReference Include="..\GastosApp.Infrastructure\GastosApp.Infrastructure.csproj" />
   </ItemGroup>

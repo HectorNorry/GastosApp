@@ -30,20 +30,21 @@ namespace GastosApp.API.Controllers
         // Cambiamos el parámetro de entrada a LoginRequestDto
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request) // <--- Cambiado aquí
         {
-            var existente = await _usuarioRepo.GetByEmailAsync(request.Email); // <--- Usamos request.Email
+
+            var existente = await _usuarioRepo.GetByEmailAsync(request.email); // <--- Usamos request.Email
 
             // Aquí es donde deberías validar la contraseña, idealmente con hash
             // Por ahora, usamos la comparación directa:
-            if (existente == null || existente.Contraseña != request.Contraseña) // <--- Usamos request.Contraseña
+            if (existente == null || existente.Contraseña != request.contraseña) // <--- Usamos request.Contraseña
                 return Unauthorized("Credenciales incorrectas");
 
             // Mapeamos el objeto de entidad 'Usuario' a nuestro DTO de respuesta
             var usuarioResponse = new UsuarioLoginResponseDto
             {
-                Id = existente.Id,
-                Nombre = existente.Nombre,
-                Apellido = existente.Apellido,
-                Email = existente.Email
+                id = existente.Id,
+                nombre = existente.Nombre,
+                apellido = existente.Apellido,
+                email = existente.Email
             };
 
             // Si necesitaras los gastos, los mapearías aquí también, usando GastoDto

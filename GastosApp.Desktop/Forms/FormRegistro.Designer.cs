@@ -128,8 +128,9 @@
             button1.TabIndex = 9;
             button1.Text = "Registrate!";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += btnRegistrarse_Click;
             // 
-            // formRegistro
+            // FormRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,7 +146,7 @@
             Controls.Add(txtEmail);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Name = "formRegistro";
+            Name = "FormRegistro";
             Text = "Registrarse";
             ResumeLayout(false);
             PerformLayout();

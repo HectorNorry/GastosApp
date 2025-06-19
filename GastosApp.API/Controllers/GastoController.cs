@@ -41,8 +41,9 @@ namespace GastosApp.API.Controllers
         {
             var gastos = await _gastoRepo.ObtenerPorUsuarioIdAsync(usuarioId);
 
-            if (!gastos.Any())
-                return NotFound($"No se encontraron gastos para el usuario con ID {usuarioId}");
+            
+
+
 
             return Ok(gastos);
         }

@@ -2,10 +2,10 @@
 {
     public class UsuarioLoginResponseDto
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; } = null!;
-        public string Apellido { get; set; } = null!;
-        public string Email { get; set; } = null!;
+        public int id { get; set; }
+        public string nombre { get; set; } = null!;
+        public string apellido { get; set; } = null!;
+        public string email { get; set; } = null!;
         
     }
 

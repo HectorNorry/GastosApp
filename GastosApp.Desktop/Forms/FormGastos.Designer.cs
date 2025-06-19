@@ -39,9 +39,8 @@
             btnAgregar = new Button();
             btnEliminar = new Button();
             btnModificar = new Button();
-            labeltot = new Label();
-            lblTotal = new Label();
             btnCerrarSesion = new Button();
+            lblTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvGastos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             SuspendLayout();
@@ -64,6 +63,7 @@
             // nudMonto
             // 
             nudMonto.Location = new Point(273, 138);
+            nudMonto.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             nudMonto.Name = "nudMonto";
             nudMonto.Size = new Size(200, 23);
             nudMonto.TabIndex = 2;
@@ -142,25 +142,6 @@
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
             // 
-            // labeltot
-            // 
-            labeltot.AutoSize = true;
-            labeltot.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labeltot.Location = new Point(760, 609);
-            labeltot.Name = "labeltot";
-            labeltot.Size = new Size(155, 30);
-            labeltot.TabIndex = 11;
-            labeltot.Text = "Total gastado :";
-            // 
-            // lblTotal
-            // 
-            lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(921, 621);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(38, 15);
-            lblTotal.TabIndex = 12;
-            lblTotal.Text = "label5";
-            // 
             // btnCerrarSesion
             // 
             btnCerrarSesion.Location = new Point(1031, 24);
@@ -171,15 +152,24 @@
             btnCerrarSesion.UseVisualStyleBackColor = true;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotal.Location = new Point(896, 614);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(67, 25);
+            lblTotal.TabIndex = 14;
+            lblTotal.Text = "Total :";
+            // 
             // FormGastos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
             ClientSize = new Size(1196, 648);
-            Controls.Add(btnCerrarSesion);
             Controls.Add(lblTotal);
-            Controls.Add(labeltot);
+            Controls.Add(btnCerrarSesion);
             Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
@@ -212,8 +202,7 @@
         private Button btnAgregar;
         private Button btnEliminar;
         private Button btnModificar;
-        private Label labeltot;
-        private Label lblTotal;
         private Button btnCerrarSesion;
+        private Label lblTotal;
     }
 }

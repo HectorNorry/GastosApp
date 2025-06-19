@@ -32,16 +32,26 @@ namespace GastosApp.Desktop.Forms
                 Contraseña = txtContraseña.Text.Trim()
             };
 
-            var creado = await _api.RegistrarAsync(nuevo);
-            if (creado != null)
+            try
             {
-                MessageBox.Show("Usuario registrado con éxito");
-                this.Close();
+                var creado = await _api.RegistrarAsync(nuevo);
+                if (creado != null)
+                {
+                    MessageBox.Show("Usuario registrado con éxito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error desconocido al registrar usuario");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar usuario");
+                MessageBox.Show($"Error: {ex.Message}", "Registro fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
+
+
 }
+

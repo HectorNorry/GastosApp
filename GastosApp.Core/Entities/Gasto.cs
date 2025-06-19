@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GastosApp.Core.Entities
@@ -16,6 +17,7 @@ namespace GastosApp.Core.Entities
         public DateTime Fecha { get; set; } = DateTime.Now;
 
         public int UsuarioId { get; set; }
+        [JsonIgnore]
         public Usuario? Usuario { get; set; } = null!;
     }
 }

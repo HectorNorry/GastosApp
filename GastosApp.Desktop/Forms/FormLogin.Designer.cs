@@ -92,7 +92,7 @@
             button1.TabIndex = 5;
             button1.Text = "Iniciar Sesión";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += btnLogin_Click;
+            button1.Click += btnIniciarSesion_Click;
             // 
             // btnRegistrarse
             // 
@@ -103,7 +103,7 @@
             btnRegistrarse.TabIndex = 6;
             btnRegistrarse.Text = "Registrarse";
             btnRegistrarse.UseVisualStyleBackColor = true;
-            btnRegistrarse.Click += btnRegistrarse_Click;
+            btnRegistrarse.Click += btnRegistro_Click;
             // 
             // label4
             // 
