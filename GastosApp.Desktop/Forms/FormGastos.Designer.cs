@@ -41,6 +41,7 @@
             btnModificar = new Button();
             labeltot = new Label();
             lblTotal = new Label();
+            btnCerrarSesion = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvGastos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             SuspendLayout();
@@ -160,12 +161,23 @@
             lblTotal.TabIndex = 12;
             lblTotal.Text = "label5";
             // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Location = new Point(1031, 24);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(124, 23);
+            btnCerrarSesion.TabIndex = 13;
+            btnCerrarSesion.Text = "Cerrar Sesion";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
+            // 
             // FormGastos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
             ClientSize = new Size(1196, 648);
+            Controls.Add(btnCerrarSesion);
             Controls.Add(lblTotal);
             Controls.Add(labeltot);
             Controls.Add(btnModificar);
@@ -202,5 +214,6 @@
         private Button btnModificar;
         private Label labeltot;
         private Label lblTotal;
+        private Button btnCerrarSesion;
     }
 }

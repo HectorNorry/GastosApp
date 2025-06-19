@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using GastosApp.Desktop.Models;
 using GastosApp.Desktop.Services;
 
+
 namespace GastosApp.Desktop.Forms
 {
     public partial class FormLogin : Form
@@ -27,12 +28,18 @@ namespace GastosApp.Desktop.Forms
             string email = txtEmail.Text.Trim();
             string contraseña = txtContraseña.Text.Trim();
 
+            // Validar campos vacíos
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contraseña))
+            {
+                MessageBox.Show("Por favor, completá el email y la contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var usuario = await _api.LoginAsync(email, contraseña);
             if (usuario != null)
             {
                 MessageBox.Show("Inicio de sesión exitoso");
-                // Abrir el formulario de gastos pasando el usuario logueado
-                var formGastos = new FormGastos(usuario); 
+                var formGastos = new FormGastos(usuario);
                 formGastos.Show();
                 this.Hide();
             }
@@ -44,8 +51,12 @@ namespace GastosApp.Desktop.Forms
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            var formRegistro = new formRegistro();
-            formRegistro.ShowDialog();
+            var formRegistro = new FormRegistro(_api);
+            formRegistro.FormClosed += (s, args) => this.Show();
+            formRegistro.Show();
+            this.Hide();
+
+            
         }
     }
 }

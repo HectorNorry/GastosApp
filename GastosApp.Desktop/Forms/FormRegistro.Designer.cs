@@ -1,6 +1,6 @@
 ﻿namespace GastosApp.Desktop.Forms
 {
-    partial class formRegistro
+    partial class FormRegistro
     {
         /// <summary>
         /// Required designer variable.

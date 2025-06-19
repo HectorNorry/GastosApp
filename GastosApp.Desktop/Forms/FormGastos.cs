@@ -99,5 +99,24 @@ namespace GastosApp.Desktop.Forms
                 dtpFecha.Value = seleccionado.Fecha;
             }
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // 1. Ocultar el formulario actual (FormPrincipal)
+            this.Hide();
+
+            // 2. Crear una nueva instancia del FormLogin
+            FormLogin loginForm = new FormLogin();
+
+            // 3. Mostrar el FormLogin
+            loginForm.Show();
+
+            // Opcional: Si quieres cerrar FormPrincipal completamente cuando se cierra FormLogin
+            // Esto es útil si no quieres que el FormPrincipal siga en memoria.
+            // Si el FormLogin se cierra (por ejemplo, el usuario lo cierra o inicia sesión de nuevo),
+            // entonces el FormPrincipal también se cerrará.
+            // Nota: Esto asume que FormLogin puede ser cerrado sin un login exitoso.
+            loginForm.FormClosed += (s, args) => this.Close();
+        }
     }
 }

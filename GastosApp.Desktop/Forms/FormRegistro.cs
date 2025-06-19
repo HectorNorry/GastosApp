@@ -12,14 +12,14 @@ using GastosApp.Desktop.Services;
 
 namespace GastosApp.Desktop.Forms
 {
-    public partial class formRegistro : Form
+    public partial class FormRegistro : Form
     {
         private readonly ApiService _api;
 
-        public formRegistro()
+        public FormRegistro(ApiService api)
         {
             InitializeComponent();
-            _api = new ApiService();
+            _api = api;
         }
 
         private async void btnRegistrarse_Click(object sender, EventArgs e)
